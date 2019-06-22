@@ -81,6 +81,12 @@ def style(path):
     return(final_img)
 
 
+@app.route('/favicon.ico/')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static', 'images'),
+                               'favicon.jpg', mimetype='image/jpeg')
+
+
 @app.route('/')
 def homepage():
     path = requests.get(url, params={'client_id': client_id}).json()[
