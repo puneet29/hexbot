@@ -3,6 +3,7 @@ import os
 import sys
 import time
 import urllib
+import random
 
 import cv2
 import numpy as np
@@ -43,8 +44,10 @@ def getClosestColor(color, pallete):
     for c in pallete:
         dist = colorDistance(color, c)
         if(dist < min_dist):
-            closest = c
-            min_dist = dist
+            # To add noise
+            if(random.randint(0, 255)%2):
+                closest = c
+                min_dist = dist
     return(closest)
 
 
@@ -66,7 +69,6 @@ def style(path):
     r = requests.get(hexbot_base, params={'count': COUNT})
     pallete = makeColorPallete(r.json()['colors'])
 
-    print(img.shape)
     height, width, channels = img.shape
     final_img = np.zeros((height, width, channels), dtype=np.uint8)
 
@@ -80,11 +82,10 @@ def style(path):
 
 @app.route('/')
 def homepage():
-    # path = requests.get(url, params={'client_id': client_id}).json()[
-    #     'urls']['small']
-    path = 'https://images.unsplash.com/photo-1558980394-34764db076b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
+    path = requests.get(url, params={'client_id': client_id}).json()[
+        'urls']['small']
     session['path'] = path
-    return(render_template('index.html', path=path))
+    return(render_template('index.html', path=path, styled=False))
 
 
 @app.route('/pointillize/')
@@ -93,9 +94,9 @@ def pointillize():
         return(redirect(url_for('homepage')))
 
     stylized_image = style(session['path'])
-    stylized_path = 'static/stylized/'+time.ctime().replace(' ', '_') + '.jpg'
-    cv2.imwrite(stylized_path, stylized_image)
-    return(render_template('index.html', path=stylized_path))
+    stylized_path = 'stylized/'+time.ctime().replace(' ', '_') + '.jpg'
+    cv2.imwrite('static/' + stylized_path, stylized_image)
+    return(render_template('index.html', path=url_for('static', filename=stylized_path), styled=True))
 
 
 if __name__ == "__main__":
