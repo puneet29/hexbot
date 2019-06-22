@@ -17,6 +17,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', os.urandom(24))
 
 hexbot_base = "https://api.noopschallenge.com/hexbot"
 COUNT = 25
+url, client_id = get_creds()
 
 
 # def colorDistance(c1, c2):
@@ -94,11 +95,10 @@ def pointillize():
         return(redirect(url_for('homepage')))
 
     stylized_image = style(session['path'])
-    stylized_path = 'stylized/'+time.ctime().replace(' ', '_') + '.jpg'
+    stylized_path = 'image/'+time.ctime().replace(' ', '_') + '.jpg'
     cv2.imwrite('static/' + stylized_path, stylized_image)
     return(render_template('index.html', path=url_for('static', filename=stylized_path), styled=True))
 
 
 if __name__ == "__main__":
-    url, client_id = get_creds()
     app.run(debug=True)
