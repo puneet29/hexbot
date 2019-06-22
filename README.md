@@ -2,7 +2,7 @@
 
 # Pointillism flask app
 
-Check out the live version at [hexbotflask.herokuapp.com](hexbotflask.herokuapp.com).  
+Check out the live version at [https://bit.ly/hexbotflask](https://bit.ly/hexbotflask).  
 It uses the hexbot API along with Unsplash API. Built in Flask, this app is a great project for beginners with no knowledge of APIs and Flask.
 
 # 👋 Meet Hexbot
