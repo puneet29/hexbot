@@ -12,10 +12,21 @@
 <body>
     <div class="container text-center">
         <h2>NOOPS Challenge - HexBot</h2>
-        <h4>Click on the photo to pointillize it!</h4>
-        <a href='/pointillize/'><img src="{{path}}"></a>
+        <h4>Click on the photo to <a href="https://en.wikipedia.org/wiki/Pointillism">pointillize</a> it!</h4>
+        {% if not styled %}
+        <a id='image' onclick="pleaseWait()" href='/pointillize/'><img src="{{path}}"></a>
+        <p id='wait'></p>
+        {% else %}
+        <img src="{{path}}">
+        <p>Here are your results!</p>
+        {% endif %}
     </div>
 
+    <script>
+        function pleaseWait() {
+            document.getElementById('wait').innerHTML = 'Please Wait... This might take time depending on the size of photo';
+        }
+    </script>
 </body>
 
 </html>
