@@ -1,9 +1,9 @@
 import math
 import os
+import random
 import sys
 import time
 import urllib
-import random
 
 import cv2
 import numpy as np
@@ -45,7 +45,7 @@ def getClosestColor(color, pallete):
         dist = colorDistance(color, c)
         if(dist < min_dist):
             # To add noise
-            if(random.randint(0, 255)%2):
+            if(random.randint(0, 255) % 2):
                 closest = c
                 min_dist = dist
     return(closest)
@@ -100,5 +100,5 @@ def pointillize():
 
 
 if __name__ == "__main__":
-    url, client_id=get_creds()
-    app.run(debug = True)
+    url, client_id = get_creds()
+    app.run(debug=True)
