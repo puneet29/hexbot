@@ -143,7 +143,7 @@ Example of seeding colors with a comma delimited string of hex codes:
 ```
 
 
-Complete [API documentation](./API.md).
+Complete [API documentation](https://github.com/noops-challenge/hexbot/blob/master/API.md).
 
 ## Note to developers
 
