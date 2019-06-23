@@ -77,7 +77,7 @@ def style(path):
         for j in range(height):
             col = getClosestColor(img[j][i], pallete)
             cv2.circle(final_img, (i, j), 3, col)
-        print(i/width)
+        # print(i/width)
     return(final_img)
 
 
