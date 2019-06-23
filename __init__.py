@@ -1,4 +1,3 @@
-import math
 import os
 import random
 import sys
@@ -8,7 +7,8 @@ import urllib
 import cv2
 import numpy as np
 import requests
-from flask import Flask, redirect, render_template, session, url_for, send_from_directory
+from flask import (Flask, redirect, render_template, send_from_directory,
+                   session, url_for)
 
 from unsplash_creds import get_creds
 
@@ -35,7 +35,7 @@ def colorDistance(c1, c2):
     r = c1[0] - c2[0]
     g = c1[1] - c2[1]
     b = c1[2] - c2[2]
-    distance = math.sqrt(30 * r**(2) + 59 * g**(2) + 11 * b**(2))
+    distance = 30 * r**(2) + 59 * g**(2) + 11 * b**(2)
     return(distance)
 
 
