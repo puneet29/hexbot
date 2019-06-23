@@ -20,13 +20,16 @@
         <p id='wait'></p>
         {% else %}
         <img src="{{path}}">
-        <p>Here are your results!</p>
+        <p>
+            Here are your results!
+            Refresh the page if you want to change the color pallete.
+        </p>
         {% endif %}
     </div>
 
     <script>
         function pleaseWait() {
-            document.getElementById('wait').innerHTML = 'Please Wait... This might take time depending on the size of photo';
+            document.getElementById('wait').innerHTML = 'Please Wait... This might take upto a minute.';
         }
     </script>
 </body>
