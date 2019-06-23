@@ -8,7 +8,7 @@ import urllib
 import cv2
 import numpy as np
 import requests
-from flask import Flask, redirect, render_template, session, url_for
+from flask import Flask, redirect, render_template, session, url_for, send_from_directory
 
 from unsplash_creds import get_creds
 
