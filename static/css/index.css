@@ -18,3 +18,7 @@ body {
 a, a:link, a:visited, a:focus, a:hover, a:active, a:any-link, a:-webkit-any-link {
     color: white !important;
 }
+
+img {
+    max-width: -webkit-fill-available;
+}
