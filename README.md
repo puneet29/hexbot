@@ -3,6 +3,7 @@
 # Pointillism flask app
 
 Check out the live version at [https://bit.ly/hexbotflask](https://bit.ly/hexbotflask).  
+Blog is available at [this link.](https://medium.com/@puneet29/getting-started-with-apis-using-python-a7815b20237d?source=friends_link&sk=871c2a524ff9cbe2de026b5497e15f68)
 It uses the hexbot API along with Unsplash API. Built in Flask, this app is a great project for beginners with no knowledge of APIs and Flask.
 
 # 👋 Meet Hexbot
