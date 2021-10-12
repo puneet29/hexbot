@@ -15,7 +15,7 @@ MarkupSafe==1.1.1
 mccabe==0.6.1
 networkx==2.3
 numpy==1.16.4
-opencv-python==4.1.0.25
+opencv-python==4.1.1.26
 pycodestyle==2.5.0
 pylint==2.3.1
 requests==2.22.0
